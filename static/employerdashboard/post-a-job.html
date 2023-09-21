@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="../css/materialdesignicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css.map" />
+
+
+
+    <link rel="stylesheet" type="text/css" href="../css/fontawesome.css" />
+
+    <!-- selectize css -->
+    <link rel="stylesheet" type="text/css" href="../css/selectize.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/nice-select.css" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+
+
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="employerdashboard.html">Dashboard</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" id="logout" href="../login.html">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav"></div>
+        <div id="layoutSidenav_content">
+            <section class="section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="rounded shadow bg-white p-4">
+                                <div class="custom-form">
+                                    <div id="message3"></div>
+                                    <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">POST A JOB</h1>
+                                    <form method="post" action="" name="contact-form" id="postjobform">
+                                        <h4 class="text-dark mb-3">Post A New Job :</h4>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Job Title</label>
+                                                    <input type="text" id="jobtitle" class="form-control resume" required maxlength="23">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Job Type</label>
+                                                    <div class="form-button">
+                                                        <select id="job-type" required class="nice-select rounded">
+                                                                <option data-display="Job Type">Job Type</option>
+                                                                <option value="Full Time">Full Time</option>
+                                                                <option value="Part Time">Part Time</option>
+                                                                <option value="Hybrid">Hybrid</option>
+                                                                <option value="Remote">Remote</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Job Category</label>
+                                                    <div class="form-button">
+                                                        <select id="job-category" required class="nice-select rounded">
+                                                                <option data-display="">Category</option>
+                                                                <option value="Information Technology">Information Technology</option>
+                                                                <option value="ADVOCATE">ADVOCATE</option>
+                                                                <option value="AGRICULTURE">AGRICULTURE</option>
+                                                                <option value="ACCOUNTANT">ACCOUNTANT</option>
+                                                                <option value="Education/Training">Education/Training</option>
+                                                                <option value="AUTOMOBILE">AUTOMOBILE</option>
+                                                                <option value="AVIATION">AVIATION</option>
+                                                                <option value="Healthcare/Hospital">Healthcare/Hospital</option>
+                                                                <option value="BANKING">BANKING</option>
+                                                                <option value="BUSINESS DEVELOPMENT">BUSINESS DEVELOPMENT</option>
+                                                                <option value="CONSULTANT">CONSULTANT</option>
+                                                                <option value="FITNESS">FITNESS</option>
+                                                                <option value="HR">HR</option>
+                                                                <option value="CONSTRUCTION">CONSTRUCTION</option>
+                                                                <option value="ARTS">ARTS</option>
+                                                                <option value="Engineering">Engineering</option>
+                                                                <option value="PUBLIC RELATIONS">PUBLIC RELATIONS</option>
+                                                                <option value="SALES">SALES</option>
+                                                                <option value="TEACHER">TEACHER</option>
+                                                                <option value="FINANCE">FINANCE</option>
+                                                                
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Minimum Salary</label>
+                                                    <!-- <input id="minimum-salary" type="text" class="form-control resume" > -->
+                                                    <div class="form-button">
+                                                        <select id="minimum-salary" required class="nice-select rounded">
+                                                                <option data-display="">From</option>
+                                                                <option value="10000">10000</option>
+                                                                <option value="15000">15000</option>
+                                                                <option value="20000">20000</option>
+                                                                <option value="25000">25000</option>
+                                                                <option value="30000">30000</option>
+                                                                <option value="35000">35000</option>
+                                                                <option value="40000">40000</option>
+                                                                <option value="45000">45000</option>
+                                                                <option value="50000">50000</option>
+                                                                <option value="55000">55000</option>
+                                                                <option value="60000">60000</option>
+                                                                <option value="65000">65000</option>
+                                                                <option value="70000">70000</option>
+                                                                <option value="75000">75000</option>
+                                                                <option value="80000">80000</option>
+                                                                <option value="85000">85000</option>
+                                                                <option value="90000">90000</option>
+                                                                <option value="95000">95000</option>
+                                                                <option value="100000">100000</option>
+                                                                <option value="110000">110000</option>
+                                                                <option value="120000">120000</option>
+                                                                <option value="130000">130000</option>
+                                                                <option value="140000">140000</option>
+                                                                <option value="150000">150000</option>
+                                                                <option value="200000">200000</option>
+            
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Maximum Salary</label>
+                                                    <!-- <input id="maximum-salary" type="text" class="form-control resume" > -->
+                                                    <div class="form-button">
+                                                        <select id="maximum-salary" required class="nice-select rounded">
+                                                        <option data-display="">To</option>
+                                                        <option value="15000">15000</option>
+                                                                <option value="20000">20000</option>
+                                                                <option value="25000">25000</option>
+                                                                <option value="30000">30000</option>
+                                                                <option value="35000">35000</option>
+                                                                <option value="40000">40000</option>
+                                                                <option value="45000">45000</option>
+                                                                <option value="50000">50000</option>
+                                                                <option value="55000">55000</option>
+                                                                <option value="60000">60000</option>
+                                                                <option value="65000">65000</option>
+                                                                <option value="70000">70000</option>
+                                                                <option value="75000">75000</option>
+                                                                <option value="80000">80000</option>
+                                                                <option value="85000">85000</option>
+                                                                <option value="90000">90000</option>
+                                                                <option value="95000">95000</option>
+                                                                <option value="100000">100000</option>
+                                                                <option value="110000">110000</option>
+                                                                <option value="120000">120000</option>
+                                                                <option value="130000">130000</option>
+                                                                <option value="140000">140000</option>
+                                                                <option value="150000">150000</option>
+                                                                <option value="200000">200000</option>
+                                                                <option value="250000">250000</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Year of Experience Required?</label>
+                                                    <div class="form-button">
+                                                        <select id="minimum-experience" required class="nice-select rounded">
+            
+                                                            <option data-display="Min">Min</option>
+                                                            <option value="Fresh">Fresh</option>
+                                                            <option value="Less than 1 Year">Less than 1 Year</option>
+                                                            <option value="1 Year">1 Year</option>
+                                                            <option value="2 Year">2 Years</option>
+                                                            <option value="3 Year">3 Years</option>
+                                                            <option value="4 Year">4 Years</option>
+                                                            <option value="5 Year">5 Years</option>
+                                                            <option value="6 Year">6 Years</option>
+                                                            <option value="7 Year">7 Years</option>
+                                                            <option value="8 Year">8 Years</option>
+                                                            <option value="9 Year">9 Years</option>
+                                                            <option value="10 Year">10 Years</option>
+                                                            <option value="11 Year">11 Years</option>
+                                                            <option value="12 Year">12 Years</option>
+                                                            <option value="13 Year">13 Years</option>
+                                                            <option value="14 Year">14 Years</option>
+                                                            <option value="15 Year">15 Years</option>
+                                                            <option value="16 Year">16 Years</option>
+                                                            <option value="17 Year">17 Years</option>
+                                                            <option value="18 Year">18 Years</option>
+                                                            <option value="19 Year">19 Years</option>
+                                                            <option value="20 Year">20 Years</option>
+                                                            <option value="21 Year">21 Years</option>
+                                                            <option value="22 Year">22 Years</option>
+                                                            <option value="23 Year">23 Years</option>
+                                                            <option value="24 Year">24 Years</option>
+                                                            <option value="25 Year">25 Years</option>
+                                                            <option value="26 Year">26 Years</option>
+                                                            <option value="27 Year">27 Years</option>
+                                                            <option value="28 Year">28 Years</option>
+                                                            <option value="29 Year">29 Years</option>
+                                                            <option value="30 Year">30 Years</option>
+                                                            <option value="31 Year">31 Years</option>
+                                                            <option value="32 Year">32 Years</option>
+                                                            <option value="33 Year">33 Years</option>
+                                                            <option value="34 Year">34 Years</option>
+                                                            <option value="35 Year">35 Years</option>
+                                                            <option value="35+ Years">More than 35 Years</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted"></label>
+                                                    <div class="form-button">
+                                                        <select id="maximum-experience" class="nice-select rounded" required>
+                                                           
+            
+                                                            <option data-display="">Max</option>
+                                                            <option value="Fresh">Fresh</option>
+                                                            <option value="Less than 1 Year">Less than 1 Year</option>
+                                                            <option value="1 Year">1 Year</option>
+                                                            <option value="2 Year">2 Years</option>
+                                                            <option value="3 Year">3 Years</option>
+                                                            <option value="4 Year">4 Years</option>
+                                                            <option value="5 Year">5 Years</option>
+                                                            <option value="6 Year">6 Years</option>
+                                                            <option value="7 Year">7 Years</option>
+                                                            <option value="8 Year">8 Years</option>
+                                                            <option value="9 Year">9 Years</option>
+                                                            <option value="10 Year">10 Years</option>
+                                                            <option value="11 Year">11 Years</option>
+                                                            <option value="12 Year">12 Years</option>
+                                                            <option value="13 Year">13 Years</option>
+                                                            <option value="14 Year">14 Years</option>
+                                                            <option value="15 Year">15 Years</option>
+                                                            <option value="16 Year">16 Years</option>
+                                                            <option value="17 Year">17 Years</option>
+                                                            <option value="18 Year">18 Years</option>
+                                                            <option value="19 Year">19 Years</option>
+                                                            <option value="20 Year">20 Years</option>
+                                                            <option value="21 Year">21 Years</option>
+                                                            <option value="22 Year">22 Years</option>
+                                                            <option value="23 Year">23 Years</option>
+                                                            <option value="24 Year">24 Years</option>
+                                                            <option value="25 Year">25 Years</option>
+                                                            <option value="26 Year">26 Years</option>
+                                                            <option value="27 Year">27 Years</option>
+                                                            <option value="28 Year">28 Years</option>
+                                                            <option value="29 Year">29 Years</option>
+                                                            <option value="30 Year">30 Years</option>
+                                                            <option value="31 Year">31 Years</option>
+                                                            <option value="32 Year">32 Years</option>
+                                                            <option value="33 Year">33 Years</option>
+                                                            <option value="34 Year">34 Years</option>
+                                                            <option value="35 Year">35 Years</option>
+                                                            <option value="35+ Years">More than 35 Years</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Education Level</label>
+                                                    <div class="form-button">
+                                                        <select id="degreelevel" class="nice-select rounded" required>
+                                                                <option data-display="Level">Select degree level</option>
+                                                                <option value="Intermediate/A-Level">Intermediate/A-Level</option>
+                                                                <option value="Matriculation/O-Level">Matriculation/O-Level</option>
+                                                                <option value="Non-Matriculation">Non-Matriculation</option>
+                                                               <option value="Bachelor">Bachelor</option>
+                                                                <option value="Master">Master</option>
+                                                                <option value="MBBS/BDS">MBBS/BDS</option>
+                                                                <option value="Pharm-D">Pharm-D</option>
+                                                                <option value="M-Phill">M-Phill</option>
+                                                                <option value="PHD/Doctorate">PHD/Doctorate</option>
+                                                                <option value="Certification">Certification</option>
+                                                                <option value="Diploma">Diploma</option>
+                                                                <option value="Short Course">Short Course</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">City</label>
+                                                    <input id="city" type="text" class="form-control resume" placeholder="" required>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <!-- <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group app-label mt-2">
+                                                        <label class="text-muted">Website</label>
+                                                        <input id="url" type="url" class="form-control resume" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Email Address</label>
+                                                    <input id="email" type="text" class="form-control resume" placeholder="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Phone Number</label>
+                                                    <input id="contact" type="text" class="form-control resume" placeholder="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Gender</label>
+                                                    <div class="form-button">
+                                                        <select id="gender" class="nice-select rounded">
+                                                                <option data-display="Gender">Gender</option>
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                                <option value="Both">Both</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group app-label mt-2">
+                                                    <label class="text-muted">Shift</label>
+                                                    <div class="form-button">
+                                                        <select id="shift" class="nice-select rounded">
+                                                                <option data-display="Shift">Shift</option>
+                                                                <option value="Morning">Morning</option>
+                                                                <option value="Evening">Evening</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                 <div class="form-group app-label mt-2">
+                                                        <label class="text-muted">Job Description</label>
+                                                        <textarea id="description" rows="6" class="form-control resume" placeholder=""></textarea>
+                                                         <!-- <div class="form-group">
+                                                         <textarea id="description"></textarea>
+                                                        </div> -->
+                                                </div> 
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="row">
+                                                <div class="col-md-12">
+                                                    <ul class="list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <div class="input-group mt-2 mb-2">
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Upload Files</label>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+            
+                                                        <li class="list-inline-item">
+                                                            <h6 class="text-muted mb-0">Upload Images Or Documents.</h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div> -->
+
+                                        <div class="row">
+                                            <div class="col-lg-12 mt-2">
+
+                                                <button type="submit" name="post" value="post" class="btn btn-primary w-100">Post a Job</button>
+                                                <!-- <a href="#" class="btn btn-primary">Post a Job</a> -->
+
+                                                <!-- <button class="btn btn-primary submitBnt" type="submit" >Post a Job</button> -->
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+                
+      
+    <script src="js/scripts.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="assets/demo/chart-area-demo.js"></script> -->
+    <!-- <script src="assets/demo/chart-bar-demo.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/plugins.js"></script>
+
+    <!-- selectize js -->
+    <script src="../js/selectize.min.js"></script>
+
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script src="js/scripts.js"></script>
+
+
+    <script src="js/employerdashboard.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/post-a-job.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="../js/app.js"></script>
+
+
+    <script src="https://cdn.tiny.cloud/1/z6z28ect570p1zmt32d25t0nuw3h6pztvkpmzu9mv5cu6mu1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#description',
+            menubar: false,
+            skin: "bootstrap",
+            plugins: "lists, link",
+            toolbar: "h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | removeformat help",
+
+        });
+    </script>
+</body>
+
+</html>
